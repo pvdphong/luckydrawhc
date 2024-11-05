@@ -118,7 +118,7 @@ function spin() {
 
   // Thiết lập thời gian tối thiểu và tối đa
   const minSpinTime = 5000; // 4 giây
-  const maxSpinTime = 10000; // 7 giây
+  const maxSpinTime = 12000; // 12 giây
 
   // Tính toán spinTime dựa trên số lượng tên
   let spinTime = Math.max(
@@ -127,7 +127,7 @@ function spin() {
   ); // Điều chỉnh theo số lượng tên
 
   // Thêm âm thanh quay
-  const spinSound = new Audio("sound/apt_rose_bruno_mars_cut.mp3"); // Thay đổi đường dẫn tới tệp âm thanh của bạn
+  const spinSound = new Audio("sound/apt_rose_bruno_mars.mp3"); // Thay đổi đường dẫn tới tệp âm thanh của bạn
   spinSound.play();
 
 //   spinButton.disabled = true;
@@ -232,7 +232,7 @@ function removeWinners() {
 function exportWinners() {
   const workbook = XLSX.utils.book_new();
   const worksheet = XLSX.utils.aoa_to_sheet(
-    [["Người thắng"]].concat(allWinners.map((winner) => [winner]))
+    [["Danh sách nhận thưởng"]].concat(allWinners.map((winner) => [winner]))
   );
   XLSX.utils.book_append_sheet(workbook, worksheet, "Winners");
   XLSX.writeFile(workbook, "winners.xlsx");
