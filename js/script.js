@@ -127,7 +127,7 @@ function spin() {
   ); // Điều chỉnh theo số lượng tên
 
   // Thêm âm thanh quay
-  const spinSound = new Audio("/sound/apt_rose_bruno_mars.mp3"); // Thay đổi đường dẫn tới tệp âm thanh của bạn
+  const spinSound = new Audio("/sound/apt_rose_bruno_mars_cut.mp3"); // Thay đổi đường dẫn tới tệp âm thanh của bạn
   spinSound.play();
 
 //   spinButton.disabled = true;
