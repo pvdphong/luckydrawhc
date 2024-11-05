@@ -1,0 +1,219 @@
+/* Đặt khung chứa toàn bộ nội dung */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start; /* Căn logo về bên trái */
+  align-items: flex-start; /* Không căn giữa theo chiều dọc, đưa logo lên góc trên */
+  padding: 0; /* Loại bỏ padding nếu không muốn có khoảng cách */
+  background-color: #f4f4f4;
+  position: relative;
+  height: 100px; /* Chiều cao của header (có thể thay đổi tùy thích) */
+}
+
+.logo {
+  width: 150px; /* Điều chỉnh kích thước logo */
+  height: auto;
+  margin: 10px; /* Khoảng cách từ mép trên và mép trái */
+}
+
+.center-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Đưa ảnh vào đúng giữa */
+    width: 100px; /* Tùy chỉnh kích thước ảnh */
+    height: 100px;
+    border-radius: 50%; /* Bo tròn ảnh nếu cần */
+    z-index: 10; /* Đảm bảo ảnh nằm trên các phần tử khác */
+}
+
+/* Container chính chứa wheel và các nút */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  width: 95%;
+}
+
+main {
+    margin-top: 30px;
+}
+
+/* Đặt wheel vào container và căn trái */
+.wheel-container {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  flex-shrink: 0;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
+
+/* Vòng quay */
+canvas {
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.count-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.person-count {
+    margin-left: 10px;
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Căn chỉnh nút quay nằm chính giữa dưới wheel */
+#spinButton {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4dabf7;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#spinButton:hover {
+  background-color: #3a8bd7;
+}
+
+/* Danh sách và các nút bên phải */
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 400px;
+}
+
+.controls h2 {
+  margin-bottom: 10px;
+  color: #ff6b6b;
+}
+
+.controls input[type='number']{
+  margin-bottom: 20px;
+  width: 15%;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  font-size: medium;
+}
+
+.controls textarea {
+  width: 105%;
+  height: 130px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: medium;
+  resize: none;
+  font-family: Arial, sans-serif;
+}
+
+.controls button {
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  background-color: #4dabf7;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Khoảng cách giữa các nút */
+  justify-content: flex-start; /* Căn chỉnh các nút về bên trái */
+}
+
+.controls button:hover {
+  background-color: #3a8bd7;
+}
+
+/* Popup để hiển thị kết quả */
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  width: max-content;
+}
+
+#popupContent {
+  max-height: 300px;
+  overflow-y: auto;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#popup li {
+  padding: 5px 0;
+}
+
+/* Nút đóng popup */
+#closePopup,
+#removePopup {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #4dabf7;
+  border-color: transparent;
+  border-radius: 3px;
+  color: #f5f5f5;
+}
+
+#removePopup {
+  background-color: #ff6b6b;
+}
+
+#closePopup:hover,
+#removePopup:hover {
+  background-color: #ccc;
+}
+
+/* Xử lý cho danh sách người thắng */
+#winnerList {
+  max-height: 80px;
+  overflow-y: auto;
+  list-style: none;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  width: 100%;
+}

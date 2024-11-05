@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/hc_lucky_draw/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vòng quay may mắn</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="img/logo.png" alt="Logo của trang web" class="logo" />
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- Phần wheel -->
+        <div class="wheel-container">
+          <!-- <div class="wheel">
+            <img
+              src="/img/duy.JPG"
+              class="center-image"
+              alt="Image"
+            />
+          </div> -->
+          <canvas id="wheelCanvas" width="500" height="500"> </canvas>
+          <button id="spinButton">Quay</button>
+        </div>
+
+        <!-- Phần controls: nhập tên, số lượng giải, danh sách kết quả -->
+        <div class="controls">
+          <h2>Danh sách quay lucky draw</h2>
+          <div class="count-container">
+            <label for="person-count">Số lượng người tham gia:</label>
+            <input
+              type="text"
+              class="person-count"
+              id="person-count-start"
+              value="0"
+              readonly
+            />
+          </div>
+          <textarea
+            id="nameList"
+            placeholder="Nhập tên, mỗi dòng một tên..."
+          ></textarea>
+          <button id="addNamesButton">Thêm tên</button>
+          <label for="prizeCount">Số lượng giải thưởng:</label>
+          <input type="number" id="prizeCount" value="1" min="1" />
+
+          <div style="color: brown">Danh sách nhận giải</div>
+          <div class="count-container">
+            <label for="person-count">Số lượng người:</label>
+            <input
+              type="text"
+              class="person-count"
+              id="person-count"
+              value="0"
+              readonly
+            />
+          </div>
+          <ul id="winnerList">
+            <!-- Danh sách người thắng sẽ xuất hiện ở đây -->
+          </ul>
+          <div class="button-container">
+            <button id="exportButton">Xuất danh sách</button>
+            <button id="clearWinnersButton">Xóa danh sách</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popup hiển thị kết quả quay -->
+      <div id="popup">
+        <ul id="popupContent"></ul>
+        <button id="closePopup" class="close-button">Đóng</button>
+        <button id="removePopup" class="remove-button">
+          Xóa người thắng khỏi danh sách
+        </button>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Link đến file JS -->
+  </body>
+</html>
