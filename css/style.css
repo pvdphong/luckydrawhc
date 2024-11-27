@@ -30,8 +30,8 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Đưa ảnh vào đúng giữa */
-    width: 100px; /* Tùy chỉnh kích thước ảnh */
-    height: 100px;
+    width: 70px; /* Tùy chỉnh kích thước ảnh */
+    height: 70px;
     border-radius: 50%; /* Bo tròn ảnh nếu cần */
     z-index: 10; /* Đảm bảo ảnh nằm trên các phần tử khác */
 }
@@ -110,12 +110,12 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 400px;
+  width: 450px;
 }
 
 .controls h2 {
   margin-bottom: 10px;
-  color: #ff6b6b;
+  color: #C80F2E;
 }
 
 .controls input[type='number']{

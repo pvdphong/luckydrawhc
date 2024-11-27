@@ -26,7 +26,6 @@ const wheelColors = [
 
 let participants = [];
 let winners = [];
-const maxWheelParticipants = 100;
 
 let names = ["Phong", "Hảo", "Khoa", "Thống", "My"]; // Tên mặc định
 let currentAngle = 0;
@@ -117,7 +116,7 @@ function spin() {
   // let spinTime = Math.random() * 5000 + 4000;
 
   // Thiết lập thời gian tối thiểu và tối đa
-  const minSpinTime = 5000; // 4 giây
+  const minSpinTime = 5000; // 5 giây
   const maxSpinTime = 12000; // 12 giây
 
   // Tính toán spinTime dựa trên số lượng tên
