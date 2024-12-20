@@ -27,7 +27,7 @@ const wheelColors = [
 let participants = [];
 let winners = [];
 
-let names = ["Phong", "Hảo", "Khoa", "Thống", "My"]; // Tên mặc định
+let names = ["Phong😎", "Hảo", "Khoa", "Thống", "My", "Trung"]; // Tên mặc định
 let currentAngle = 0;
 let spinTimeout;
 let isSpinning = false;
