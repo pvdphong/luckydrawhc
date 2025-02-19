@@ -116,17 +116,17 @@ function spin() {
   // let spinTime = Math.random() * 5000 + 4000;
 
   // Thiết lập thời gian tối thiểu và tối đa
-  const minSpinTime = 5000; // 5 giây
-  const maxSpinTime = 12000; // 12 giây
+  const minSpinTime = 7000; // 7 giây
+  const maxSpinTime = 18000; // 18 giây
 
   // Tính toán spinTime dựa trên số lượng tên
   let spinTime = Math.max(
     minSpinTime,
-    Math.min(maxSpinTime, names.length * prizeCountInput.value * 100)
+    Math.min(maxSpinTime, names.length * prizeCountInput.value * 5)
   ); // Điều chỉnh theo số lượng tên
 
   // Thêm âm thanh quay
-  const spinSound = new Audio("sound/apt_rose_bruno_mars.mp3"); // Thay đổi đường dẫn tới tệp âm thanh của bạn
+  const spinSound = new Audio("sound/ca_sale.mp3"); // Thay đổi đường dẫn tới tệp âm thanh của bạn
   spinSound.play();
 
 //   spinButton.disabled = true;
